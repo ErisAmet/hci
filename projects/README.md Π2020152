@@ -30,18 +30,27 @@ GitHub Profile:ErisAmet-https://github.com/ErisAmet
 
 2ο Παραδοτέο - Airplane
 
+ Στο δεύτερο μου παραδοτέο εχω επιλέξη την άσκηση Airplane.Επέλεξα το Airplane επειδή ήθελα να κανω κατι διαφορετικό,με το αεροπλάνο μπορείτε να κάνετε ¨δεξία , 
+αριστερά , πάνω , κάτω".επιπλέον,έχω προσθέση 3D σύννεφα και για Background επέλεξα ¨μέρα".
 
 
+Στο παρακάτω κώδικα(JavaScript)που πείρα άλλαξα την ταχύτητα του αεροπλάνου απο 50 σε 70:
+
+import gsap from 'https://cdn.skypack.dev/gsap'
+
+const BOUNDS = 70
+document.addEventListener('pointermove', ({ x, y }) => {
+  const newX = gsap.utils.mapRange(0, window.innerWidth, -BOUNDS, BOUNDS, x)
+  const newY = gsap.utils.mapRange(0, window.innerHeight, BOUNDS, -BOUNDS, y)
+  gsap.set(document.documentElement, {
+    '--rotate-x': newY,
+    '--rotate-y': newX,
+  })
+})
 
 
-
-
-
-
-
-
-
-
+Τέλος,μπορείτε κάνοντας "copy/paste" το λινκ μου να δείτε την εργασία μου.
 
 
 Link στο pen της άσκησης στο codepen.io:https://codepen.io/erisamet/pen/VwzRorM
+θα προσθέσω και συντομα της φωτογραφίες απο κώδικα...
